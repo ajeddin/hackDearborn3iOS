@@ -26,12 +26,10 @@ struct calendarView: View {
                 .fontWeight(.semibold)
                 .foregroundColor(.primary)
             
-            // Email
             Text(userInfo[0].userEmail)
                 .font(.subheadline)
                 .foregroundColor(.gray)
             
-            // Button
             Button(action: {
                 HapticManager.instance.impact(style: .heavy)
                 authViewModel.signOut(modelContext: context)
