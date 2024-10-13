@@ -18,7 +18,7 @@ struct viewController: View {
         if isActive {
             if !userInfo.isEmpty || authViewModel.isSignedIn{
                            ContentView()
-                               .environmentObject(authViewModel)
+//                               .environmentObject(authViewModel)
                        } else {
                            SignInView()
                                .environmentObject(authViewModel)

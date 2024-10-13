@@ -14,13 +14,13 @@ struct SignInView: View {
 
     var body: some View {
         VStack {
-            Text("Welcome to ProductivityApp")
+            Text("Welcome to AI Scheduler")
                 .font(.largeTitle)
                 .padding()
 
             GoogleSignInButton(action: {
                 authViewModel.signIn(modelContext: context) 
-            })
+            }).background(Color.darkInDark)
             .frame(width: 200, height: 50)
         }
     }

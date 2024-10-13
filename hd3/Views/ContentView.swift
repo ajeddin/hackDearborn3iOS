@@ -6,84 +6,136 @@
 //
 
 import SwiftUI
-
+import SwiftData
 struct ContentView: View {
     @State private var text: String = ""
     @State private var date = Date()
     @EnvironmentObject var authViewModel: AuthenticationViewModel
-    
+    @Query  var userInfo: [UserInfoThings]
     var body: some View {
-        let accessToken = authViewModel.user?.accessToken
-
-        GeometryReader{ geoProx in
-            NavigationStack{
-                VStack{
-                    VStack{
-                        HStack
-                        {
-                            NavigationLink{
-                                calendarView()
-                            } label: {
-                                Image(systemName: "calendar")
-//                                    .resizable()
-                                    .scaledToFit()
-//                                    .frame(width:geoProx.size.width/20,height: geoProx.size.height/20 )
-                                
+        //        let accessToken = authViewModel./*user*/?.accessToken
+        if !userInfo.isEmpty{
+            GeometryReader{ geoProx in
+                NavigationStack{
+                    ZStack{
+                        Color.darkInDark.ignoresSafeArea(.all)
+                        Rectangle()
+                            .foregroundColor(.clear)
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                dismissKeyboard()
                             }
+                        VStack{
                             
-                            //                        Image(systemName: "calendar")
-                            Spacer()
-                            NavigationLink{
-                                chatView()
-                            } label: {
-                                Image(systemName: "person.fill")
-//                                    .resizable()h
-                                    .frame(width:geoProx.size.width/16,height: geoProx.size.height/20 )
-                                
+                            VStack{
+                                HStack
+                                {
+                                    Text("Today").bold().font(.title)
+                                    Spacer()
+                                    NavigationLink{
+                                        chatView()
+                                    } label: {
+                                        Image(systemName: "message.circle.fill")
+                                            .resizable()
+                                            .scaledToFit()
+                                        
+                                            .frame(width:geoProx.size.width/10,height: geoProx.size.height/10 )
+                                        //                                            .scaledToFit()
+                                        
+                                    }
+                                    .padding(.trailing, 10)
+                                    
+                                    //                        Image(systemName: "calendar")
+//                                    Spacer()
+                                    
+                                    
+                                    NavigationLink{
+                                        calendarView(authViewModel: authViewModel, geoProx: geoProx )
+                                        //                                        chatView()
+                                        
+                                    } label: {
+                                        AsyncImage(url: URL(string: userInfo[0].userImageURL)) { image in
+                                            image
+                                                .resizable()  // Ensure the image can resize
+                                                .scaledToFit() // Fit the image within the given frame
+                                                .frame(width: geoProx.size.width / 10, height: geoProx.size.height / 10
+                                                )
+                                                .clipShape(Circle()) // Clip the image to a circular shape
+                                        } placeholder: {
+                                            
+                                            ProgressView()
+                                        }
+                                    }
+                                    
+                                    
+                                }
+                                Divider().bold().background(Color.accentColor)
+//                                HStack{
+//                                    Text("Today").bold().font(.title)
+//                                    Spacer()
+//
+//                                }
                             }
-                            .scaledToFit()
-
+//                            .padding(.top,50)
+                            .padding([.leading,.trailing])
                             
-                        }
-                        Divider().bold().frame(height: 10)
-                        HStack{
-                            Text("Today").bold().font(.title)
+//                            .ignoresSafeArea()
+                            
+                            
+                            Spacer()
                             Spacer()
                             
-                        }
-                    }.padding(.top,50)                    .padding([.bottom,.leading,.trailing]).ignoresSafeArea()
-                    Spacer()
-                    HStack{
-                        TextField("Search", text: $text)
+                            
+                            HStack{
+                                TextField("Add Task", text: $text)
+                                    .padding()
+                                    .background(Color(.systemGray6))
+                                    .cornerRadius(25)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 25)
+                                            .stroke(Color.accentColor, lineWidth: 2)
+                                    )
+                                Spacer()
+                                Button{
+                                    
+                                    
+                                    
+                                }label:{
+                                    Image(systemName: "arrow.up")
+                                        .padding()
+                                        .background(Color(.systemGray6))
+                                        .cornerRadius(25)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 25)
+                                                .stroke(Color.accentColor, lineWidth: 2)
+                                        )
+
+                                    
+                                }
+                            }
                             .padding()
-                            .background(Color(.systemGray6))
-                            .cornerRadius(25)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 25)
-                                    .stroke(Color.gray, lineWidth: 1)
-                            )
-                        Spacer()
-                        Button{}label:{
-                            Image(systemName: "arrow.right")
                             
                         }
-                    }.padding()
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                }/*.padding().ignoresSafeArea()*/
-            }
-
-            
-        }
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    }/*.padding().ignoresSafeArea()*/
+                }
+                
+                
+            }}
     }
 }
 
 #Preview {
     ContentView()
+}
+extension View {
+    func dismissKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
 }

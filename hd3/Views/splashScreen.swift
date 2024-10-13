@@ -16,7 +16,7 @@ struct splashScreen: View {
         GeometryReader{ geoProx in
 
         ZStack{
-            Color("mainColor").ignoresSafeArea()
+            Color("darkInDark").ignoresSafeArea()
             
             VStack{
                 Image("logoWOBack").resizable().scaledToFit()
@@ -27,12 +27,12 @@ struct splashScreen: View {
                         Text("Powered by AI.")
                     }.bold()
                         .padding(.top,10)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color.lightInDark)
                 })
             }
         }
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 withAnimation {
                     self.isActive = true
                 }
