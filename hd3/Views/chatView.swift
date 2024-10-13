@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
-
+import SwiftData
 struct chatView:View {
+    @Query  var userInfo: [UserInfoThings];
+    
     var body: some View {
         VStack {
-            Text("Hello, World!")
+            ForEach(userInfo) { info in
+                
+                Text(info.userEmail).font(.title)
+            }
         }
     }
     

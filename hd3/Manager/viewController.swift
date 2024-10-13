@@ -8,22 +8,30 @@
 import SwiftUI
 import GoogleSignIn
 import GoogleSignInSwift
+import SwiftData
 struct viewController: View {
     @EnvironmentObject var authViewModel: AuthenticationViewModel
-
+    @Query  var userInfo: [UserInfoThings];
+    
     @State private var isActive = false
     var body: some View {
-        if !isActive {
-            if authViewModel.isSignedIn {
+        if isActive {
+            if !userInfo.isEmpty || authViewModel.isSignedIn{
                            ContentView()
                                .environmentObject(authViewModel)
                        } else {
                            SignInView()
                                .environmentObject(authViewModel)
-                       }        }
-//        else {
-////            splashScreen(isActive: $isActive)
-//        }
+                          if !userInfo.isEmpty{
+                              ContentView()
+                                  .environmentObject(authViewModel)
+                           }
+                       }
+        }
+        
+        else {
+            splashScreen(isActive: $isActive)
+        }
     }
 }
 #Preview {
