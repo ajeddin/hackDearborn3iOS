@@ -10,7 +10,11 @@ import SwiftUI
 struct ContentView: View {
     @State private var text: String = ""
     @State private var date = Date()
+    @EnvironmentObject var authViewModel: AuthenticationViewModel
+
     var body: some View {
+        let accessToken = authViewModel.user?.accessToken
+
         GeometryReader{ geoProx in
             NavigationStack{
                 VStack{

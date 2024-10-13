@@ -9,13 +9,15 @@
 import SwiftUI
 
 struct splashScreen: View {
+
     @Binding var isActive: Bool
-    
+
     var body: some View {
-       
+        GeometryReader{ geoProx in
+
         ZStack{
             Color("mainColor").ignoresSafeArea()
-
+            
             VStack{
                 Image("logoWOBack").resizable().scaledToFit()
                     .frame(maxWidth: 250, maxHeight: 250)
@@ -35,7 +37,8 @@ struct splashScreen: View {
                     self.isActive = true
                 }
             }
-        }
+        }}
 
     }
 }
+
