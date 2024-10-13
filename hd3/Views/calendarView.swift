@@ -33,6 +33,7 @@ struct calendarView: View {
             
             // Button
             Button(action: {
+                HapticManager.instance.impact(style: .heavy)
                 authViewModel.signOut(modelContext: context)
             }) {
                 Text("Sign Out")

@@ -19,7 +19,8 @@ struct SignInView: View {
                 .padding()
 
             GoogleSignInButton(action: {
-                authViewModel.signIn(modelContext: context) 
+                authViewModel.signIn(modelContext: context)
+                HapticManager.instance.impact(style: .heavy)
             }).background(Color.darkInDark)
             .frame(width: 200, height: 50)
         }

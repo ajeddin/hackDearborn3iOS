@@ -34,7 +34,7 @@ struct chatView:View {
                         Spacer()
                         Button{
                             
-                            
+                            HapticManager.instance.impact(style: .light)
                             
                         }label:{
                             Image(systemName: "arrow.up")
