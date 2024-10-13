@@ -45,12 +45,19 @@ class AuthenticationViewModel: ObservableObject {
             }
             
             self?.isSignedIn = true
+            
+            
         }
     }
 
-    func signOut() {
+    func signOut(modelContext: ModelContext) {
         GIDSignIn.sharedInstance.signOut()
         isSignedIn = false
         user = nil
+        do {
+            try modelContext.delete(model: UserInfoThings.self)
+        } catch {
+            print("Failed to clear all Country and City data.")
+        }
     }
 }

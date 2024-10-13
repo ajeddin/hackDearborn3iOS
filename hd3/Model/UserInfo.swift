@@ -18,15 +18,19 @@ class UserInfoThings: Identifiable {
     var userEmail: String = ""
     var userAccessToken: String = ""
     var userName: String = ""
+    var userImageURL: String = ""
+    var userID: String = ""
 
-    init(isLoggedIn: Bool, userEmail: String, userAccessToken: String,userName: String) {
+    init(id: String = UUID().uuidString, isLoggedIn: Bool, userEmail: String, userAccessToken: String, userName: String, userImageURL: String, userID: String) {
+        self.id = id
         self.isLoggedIn = isLoggedIn
         self.userEmail = userEmail
         self.userAccessToken = userAccessToken
         self.userName = userName
+        self.userImageURL = userImageURL
+        self.userID = userID
     }
-    
     convenience init(isLoggedIn: Bool, user: GIDGoogleUser) {
-        self.init(isLoggedIn: isLoggedIn, userEmail: user.profile?.email ?? "", userAccessToken: user.accessToken.tokenString, userName: user.profile?.name ?? "")
+        self.init(isLoggedIn: isLoggedIn, userEmail: user.profile?.email ?? "", userAccessToken: user.accessToken.tokenString, userName: user.profile?.name ?? "",userImageURL: user.profile?.imageURL(withDimension: 100)?.absoluteString ?? "", userID: user.userID!)
     }
 }
