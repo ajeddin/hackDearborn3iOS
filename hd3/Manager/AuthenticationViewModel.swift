@@ -33,7 +33,7 @@ class AuthenticationViewModel: ObservableObject {
                 print("No user returned")
                 return
             }
-
+            HapticManager.instance.impact(style: .heavy)
             // Create the UserInfoThings model and insert into context
             let userStuff = UserInfoThings(isLoggedIn: true, user: user)
             modelContext.insert(userStuff)

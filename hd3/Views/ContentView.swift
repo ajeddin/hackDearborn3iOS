@@ -47,6 +47,7 @@ struct ContentView: View {
                                             .font(.title) // Set font size
                                             .onTapGesture {
                                                 // Show the hidden DatePicker when the text is tapped
+                                                HapticManager.instance.impact(style: .light)
                                                 isDatePickerPresented.toggle()
                                                 isTextPresented = false
                                             }
@@ -58,7 +59,7 @@ struct ContentView: View {
                                                        .labelsHidden()
                                                        .onChange(of: selectedDate) { _ in
                                                           isTextPresented = true
-
+                                                           HapticManager.instance.impact(style: .light)
                                                            isDatePickerPresented = false
                                                        
                                                }
@@ -68,7 +69,9 @@ struct ContentView: View {
                                        
                                 Spacer()
                                     NavigationLink{
+                                        
                                         chatView()
+                                        
                                     } label: {
                                         Image(systemName: "message.circle.fill")
                                             .resizable()
@@ -136,6 +139,7 @@ struct ContentView: View {
                                     )
                                 Spacer()
                                 Button{
+                                    HapticManager.instance.impact(style: .light)
                                     storedTasks.append(text)
                                 }label:{
                                     Image(systemName: "arrow.up")

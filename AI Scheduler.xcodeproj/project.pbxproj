@@ -29,18 +29,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2189AD602CBAEFE700E80AE7 /* hd3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hd3.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2189AD702CBAEFE900E80AE7 /* hd3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hd3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2189AD7A2CBAEFE900E80AE7 /* hd3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hd3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2189AD602CBAEFE700E80AE7 /* AI Scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AI Scheduler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2189AD702CBAEFE900E80AE7 /* AI SchedulerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AI SchedulerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2189AD7A2CBAEFE900E80AE7 /* AI SchedulerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AI SchedulerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		214937322CBB4FCF00187D9B /* Exceptions for "hd3" folder in "hd3" target */ = {
+		214937322CBB4FCF00187D9B /* Exceptions for "hd3" folder in "AI Scheduler" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 2189AD5F2CBAEFE700E80AE7 /* hd3 */;
+			target = 2189AD5F2CBAEFE700E80AE7 /* AI Scheduler */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -48,7 +48,7 @@
 		2189AD622CBAEFE700E80AE7 /* hd3 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				214937322CBB4FCF00187D9B /* Exceptions for "hd3" folder in "hd3" target */,
+				214937322CBB4FCF00187D9B /* Exceptions for "hd3" folder in "AI Scheduler" target */,
 			);
 			path = hd3;
 			sourceTree = "<group>";
@@ -113,9 +113,9 @@
 		2189AD612CBAEFE700E80AE7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2189AD602CBAEFE700E80AE7 /* hd3.app */,
-				2189AD702CBAEFE900E80AE7 /* hd3Tests.xctest */,
-				2189AD7A2CBAEFE900E80AE7 /* hd3UITests.xctest */,
+				2189AD602CBAEFE700E80AE7 /* AI Scheduler.app */,
+				2189AD702CBAEFE900E80AE7 /* AI SchedulerTests.xctest */,
+				2189AD7A2CBAEFE900E80AE7 /* AI SchedulerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,9 +123,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2189AD5F2CBAEFE700E80AE7 /* hd3 */ = {
+		2189AD5F2CBAEFE700E80AE7 /* AI Scheduler */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2189AD842CBAEFE900E80AE7 /* Build configuration list for PBXNativeTarget "hd3" */;
+			buildConfigurationList = 2189AD842CBAEFE900E80AE7 /* Build configuration list for PBXNativeTarget "AI Scheduler" */;
 			buildPhases = (
 				2189AD5C2CBAEFE700E80AE7 /* Sources */,
 				2189AD5D2CBAEFE700E80AE7 /* Frameworks */,
@@ -138,18 +138,18 @@
 			fileSystemSynchronizedGroups = (
 				2189AD622CBAEFE700E80AE7 /* hd3 */,
 			);
-			name = hd3;
+			name = "AI Scheduler";
 			packageProductDependencies = (
 				214937342CBB4FEC00187D9B /* GoogleSignIn */,
 				214937362CBB4FEF00187D9B /* GoogleSignInSwift */,
 			);
 			productName = hd3;
-			productReference = 2189AD602CBAEFE700E80AE7 /* hd3.app */;
+			productReference = 2189AD602CBAEFE700E80AE7 /* AI Scheduler.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2189AD6F2CBAEFE900E80AE7 /* hd3Tests */ = {
+		2189AD6F2CBAEFE900E80AE7 /* AI SchedulerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2189AD872CBAEFE900E80AE7 /* Build configuration list for PBXNativeTarget "hd3Tests" */;
+			buildConfigurationList = 2189AD872CBAEFE900E80AE7 /* Build configuration list for PBXNativeTarget "AI SchedulerTests" */;
 			buildPhases = (
 				2189AD6C2CBAEFE900E80AE7 /* Sources */,
 				2189AD6D2CBAEFE900E80AE7 /* Frameworks */,
@@ -163,16 +163,16 @@
 			fileSystemSynchronizedGroups = (
 				2189AD732CBAEFE900E80AE7 /* hd3Tests */,
 			);
-			name = hd3Tests;
+			name = "AI SchedulerTests";
 			packageProductDependencies = (
 			);
 			productName = hd3Tests;
-			productReference = 2189AD702CBAEFE900E80AE7 /* hd3Tests.xctest */;
+			productReference = 2189AD702CBAEFE900E80AE7 /* AI SchedulerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2189AD792CBAEFE900E80AE7 /* hd3UITests */ = {
+		2189AD792CBAEFE900E80AE7 /* AI SchedulerUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2189AD8A2CBAEFE900E80AE7 /* Build configuration list for PBXNativeTarget "hd3UITests" */;
+			buildConfigurationList = 2189AD8A2CBAEFE900E80AE7 /* Build configuration list for PBXNativeTarget "AI SchedulerUITests" */;
 			buildPhases = (
 				2189AD762CBAEFE900E80AE7 /* Sources */,
 				2189AD772CBAEFE900E80AE7 /* Frameworks */,
@@ -186,11 +186,11 @@
 			fileSystemSynchronizedGroups = (
 				2189AD7D2CBAEFE900E80AE7 /* hd3UITests */,
 			);
-			name = hd3UITests;
+			name = "AI SchedulerUITests";
 			packageProductDependencies = (
 			);
 			productName = hd3UITests;
-			productReference = 2189AD7A2CBAEFE900E80AE7 /* hd3UITests.xctest */;
+			productReference = 2189AD7A2CBAEFE900E80AE7 /* AI SchedulerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -216,7 +216,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2189AD5B2CBAEFE700E80AE7 /* Build configuration list for PBXProject "hd3" */;
+			buildConfigurationList = 2189AD5B2CBAEFE700E80AE7 /* Build configuration list for PBXProject "AI Scheduler" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -233,9 +233,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2189AD5F2CBAEFE700E80AE7 /* hd3 */,
-				2189AD6F2CBAEFE900E80AE7 /* hd3Tests */,
-				2189AD792CBAEFE900E80AE7 /* hd3UITests */,
+				2189AD5F2CBAEFE700E80AE7 /* AI Scheduler */,
+				2189AD6F2CBAEFE900E80AE7 /* AI SchedulerTests */,
+				2189AD792CBAEFE900E80AE7 /* AI SchedulerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -291,12 +291,12 @@
 /* Begin PBXTargetDependency section */
 		2189AD722CBAEFE900E80AE7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2189AD5F2CBAEFE700E80AE7 /* hd3 */;
+			target = 2189AD5F2CBAEFE700E80AE7 /* AI Scheduler */;
 			targetProxy = 2189AD712CBAEFE900E80AE7 /* PBXContainerItemProxy */;
 		};
 		2189AD7C2CBAEFE900E80AE7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2189AD5F2CBAEFE700E80AE7 /* hd3 */;
+			target = 2189AD5F2CBAEFE700E80AE7 /* AI Scheduler */;
 			targetProxy = 2189AD7B2CBAEFE900E80AE7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -430,7 +430,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hd3/Preview Content\"";
-				DEVELOPMENT_TEAM = 6W2BB3Y823;
+				DEVELOPMENT_TEAM = 42NWXG687M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hd3/Info.plist;
@@ -444,7 +444,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.jeddin.gabe;
+				PRODUCT_BUNDLE_IDENTIFIER = me.jeddin.hd3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -461,7 +461,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hd3/Preview Content\"";
-				DEVELOPMENT_TEAM = 6W2BB3Y823;
+				DEVELOPMENT_TEAM = 42NWXG687M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hd3/Info.plist;
@@ -475,7 +475,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.jeddin.gabe;
+				PRODUCT_BUNDLE_IDENTIFIER = me.jeddin.hd3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -498,7 +498,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hd3.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/hd3";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AI Scheduler.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AI Scheduler";
 			};
 			name = Debug;
 		};
@@ -517,7 +517,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hd3.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/hd3";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AI Scheduler.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AI Scheduler";
 			};
 			name = Release;
 		};
@@ -558,7 +558,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2189AD5B2CBAEFE700E80AE7 /* Build configuration list for PBXProject "hd3" */ = {
+		2189AD5B2CBAEFE700E80AE7 /* Build configuration list for PBXProject "AI Scheduler" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2189AD822CBAEFE900E80AE7 /* Debug */,
@@ -567,7 +567,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2189AD842CBAEFE900E80AE7 /* Build configuration list for PBXNativeTarget "hd3" */ = {
+		2189AD842CBAEFE900E80AE7 /* Build configuration list for PBXNativeTarget "AI Scheduler" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2189AD852CBAEFE900E80AE7 /* Debug */,
@@ -576,7 +576,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2189AD872CBAEFE900E80AE7 /* Build configuration list for PBXNativeTarget "hd3Tests" */ = {
+		2189AD872CBAEFE900E80AE7 /* Build configuration list for PBXNativeTarget "AI SchedulerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2189AD882CBAEFE900E80AE7 /* Debug */,
@@ -585,7 +585,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2189AD8A2CBAEFE900E80AE7 /* Build configuration list for PBXNativeTarget "hd3UITests" */ = {
+		2189AD8A2CBAEFE900E80AE7 /* Build configuration list for PBXNativeTarget "AI SchedulerUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2189AD8B2CBAEFE900E80AE7 /* Debug */,
