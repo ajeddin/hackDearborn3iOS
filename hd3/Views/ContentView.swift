@@ -10,8 +10,18 @@ import SwiftData
 struct ContentView: View {
     @State private var text: String = ""
     @State private var date = Date()
+    @State private var selectedDate = Date()
     @EnvironmentObject var authViewModel: AuthenticationViewModel
     @Query  var userInfo: [UserInfoThings]
+    @State private var isDatePickerPresented = false
+    @State private var isTextPresented = true
+
+    func dateToString(_ date: Date) -> String {
+          let formatter = DateFormatter()
+          formatter.dateStyle = .medium // You can customize the format as needed
+          return formatter.string(from: date)
+      }
+
     @State private var storedTasks: [String] = []
     var body: some View {
         //        let accessToken = authViewModel./*user*/?.accessToken
@@ -31,8 +41,32 @@ struct ContentView: View {
                             VStack{
                                 HStack
                                 {
-                                    Text("Today").bold().font(.title)
-                                    Spacer()
+                                    if isTextPresented{
+                                        Text(dateToString(selectedDate))
+                                            .bold() // Make text bold
+                                            .font(.title) // Set font size
+                                            .onTapGesture {
+                                                // Show the hidden DatePicker when the text is tapped
+                                                isDatePickerPresented.toggle()
+                                                isTextPresented = false
+                                            }
+                                    }
+                                               
+                                               if isDatePickerPresented {
+                                                   DatePicker("", selection: $selectedDate, displayedComponents: .date)
+                                                       .datePickerStyle(.compact)
+                                                       .labelsHidden()
+                                                       .onChange(of: selectedDate) { _ in
+                                                          isTextPresented = true
+
+                                                           isDatePickerPresented = false
+                                                       
+                                               }
+                                           
+                                           .padding()
+                                       }
+                                       
+                                Spacer()
                                     NavigationLink{
                                         chatView()
                                     } label: {
