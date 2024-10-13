@@ -1,12 +1,13 @@
 import SwiftUI
 import GoogleSignIn
 import GoogleSignInSwift
+import SwiftData
 
 class AuthenticationViewModel: ObservableObject {
     @Published var isSignedIn = false
     @Published var user: GIDGoogleUser?
 
-    func signIn() {
+    func signIn(modelContext: ModelContext) {
         // Get the root view controller
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let rootViewController = windowScene.windows.first?.rootViewController else {
@@ -33,7 +34,16 @@ class AuthenticationViewModel: ObservableObject {
                 return
             }
 
-            self?.user = user
+            // Create the UserInfoThings model and insert into context
+            let userStuff = UserInfoThings(isLoggedIn: true, user: user)
+            modelContext.insert(userStuff)
+            
+            do {
+                try modelContext.save()
+            } catch {
+                print("Failed to save user info: \(error.localizedDescription)")
+            }
+            
             self?.isSignedIn = true
         }
     }

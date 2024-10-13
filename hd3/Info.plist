@@ -21,5 +21,9 @@
 	<array>
 		<string>com.googleusercontent.apps.834982508706-sm3d5kjt0l2enoj51pueh96jpbj7baho.apps.googleusercontent.com</string>
 	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 </dict>
 </plist>

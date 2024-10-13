@@ -17,6 +17,6 @@ struct hd3App: App {
             viewController()
                 .environmentObject(authViewModel)
 
-        }
+        }.modelContainer(for: [UserInfoThings.self])
     }
 }
