@@ -6,12 +6,21 @@
 //
 
 import SwiftUI
+import GoogleSignIn
+import GoogleSignInSwift
 
 @main
 struct hd3App: App {
+    @StateObject var authViewModel = AuthenticationViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if authViewModel.isSignedIn {
+                ContentView()
+                    .environmentObject(authViewModel)
+            } else {
+                SignInView()
+                    .environmentObject(authViewModel)
+            }
         }
     }
 }

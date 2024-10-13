@@ -7,8 +7,11 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+    @EnvironmentObject var authViewModel: AuthenticationViewModel
     var body: some View {
+        let accessToken = authViewModel.user?.accessToken
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
