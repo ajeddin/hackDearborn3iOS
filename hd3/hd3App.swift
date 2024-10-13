@@ -8,10 +8,15 @@
 import SwiftUI
 
 @main
+
 struct hd3App: App {
+    @StateObject var authViewModel = AuthenticationViewModel()
+
     var body: some Scene {
         WindowGroup {
             viewController()
+                .environmentObject(authViewModel)
+
         }
     }
 }
