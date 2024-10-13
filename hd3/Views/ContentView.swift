@@ -12,7 +12,7 @@ struct ContentView: View {
     @State private var date = Date()
     var body: some View {
         GeometryReader{ geoProx in
-            NavigationView{
+            NavigationStack{
                 VStack{
                     VStack{
                         HStack
@@ -21,9 +21,9 @@ struct ContentView: View {
                                 calendarView()
                             } label: {
                                 Image(systemName: "calendar")
-                                    .resizable()
+//                                    .resizable()
                                     .scaledToFit()
-                                    .frame(width:geoProx.size.width/20,height: geoProx.size.height/20 )
+//                                    .frame(width:geoProx.size.width/20,height: geoProx.size.height/20 )
                                 
                             }
                             
@@ -33,11 +33,12 @@ struct ContentView: View {
                                 chatView()
                             } label: {
                                 Image(systemName: "person.fill")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width:geoProx.size.width/20,height: geoProx.size.height/20 )
+//                                    .resizable()h
+                                    .frame(width:geoProx.size.width/16,height: geoProx.size.height/20 )
                                 
                             }
+                            .scaledToFit()
+
                             
                         }
                         Divider().bold().frame(height: 10)
@@ -58,8 +59,10 @@ struct ContentView: View {
                                     .stroke(Color.gray, lineWidth: 1)
                             )
                         Spacer()
-                        
-                        Image(systemName: "arrow.right")
+                        Button{}label:{
+                            Image(systemName: "arrow.right")
+                            
+                        }
                     }.padding()
                     
                     
