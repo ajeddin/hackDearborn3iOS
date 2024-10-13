@@ -12,6 +12,7 @@ struct ContentView: View {
     @State private var date = Date()
     @EnvironmentObject var authViewModel: AuthenticationViewModel
     @Query  var userInfo: [UserInfoThings]
+    @State private var storedTasks: [String] = []
     var body: some View {
         //        let accessToken = authViewModel./*user*/?.accessToken
         if !userInfo.isEmpty{
@@ -75,12 +76,16 @@ struct ContentView: View {
 //                                    Spacer()
 //
 //                                }
+                                List {
+                                    ForEach(storedTasks, id: \.self) { item in
+                                        Text(item)
+                                    }
+                                }
                             }
 //                            .padding(.top,50)
                             .padding([.leading,.trailing])
                             
 //                            .ignoresSafeArea()
-                            
                             
                             Spacer()
                             Spacer()
@@ -97,9 +102,7 @@ struct ContentView: View {
                                     )
                                 Spacer()
                                 Button{
-                                    
-                                    
-                                    
+                                    storedTasks.append(text)
                                 }label:{
                                     Image(systemName: "arrow.up")
                                         .padding()
