@@ -15,13 +15,13 @@ struct ContentView: View {
     @Query  var userInfo: [UserInfoThings]
     @State private var isDatePickerPresented = false
     @State private var isTextPresented = true
-
+    
     func dateToString(_ date: Date) -> String {
-          let formatter = DateFormatter()
-          formatter.dateStyle = .medium // You can customize the format as needed
-          return formatter.string(from: date)
-      }
-
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium // You can customize the format as needed
+        return formatter.string(from: date)
+    }
+    
     @State private var storedTasks: [String] = []
     var body: some View {
         //        let accessToken = authViewModel./*user*/?.accessToken
@@ -52,22 +52,22 @@ struct ContentView: View {
                                                 isTextPresented = false
                                             }
                                     }
-                                               
-                                               if isDatePickerPresented {
-                                                   DatePicker("", selection: $selectedDate, displayedComponents: .date)
-                                                       .datePickerStyle(.compact)
-                                                       .labelsHidden()
-                                                       .onChange(of: selectedDate) { _ in
-                                                          isTextPresented = true
-                                                           HapticManager.instance.impact(style: .light)
-                                                           isDatePickerPresented = false
-                                                       
-                                               }
-                                           
-                                           .padding()
-                                       }
-                                       
-                                Spacer()
+                                    
+                                    if isDatePickerPresented {
+                                        DatePicker("", selection: $selectedDate, displayedComponents: .date)
+                                            .datePickerStyle(.compact)
+                                            .labelsHidden()
+                                            .onChange(of: selectedDate) { _ in
+                                                isTextPresented = true
+                                                HapticManager.instance.impact(style: .light)
+                                                isDatePickerPresented = false
+                                                
+                                            }
+                                        
+                                            .padding()
+                                    }
+                                    
+                                    Spacer()
                                     NavigationLink{
                                         
                                         chatView()
@@ -84,7 +84,7 @@ struct ContentView: View {
                                     .padding(.trailing, 10)
                                     
                                     //                        Image(systemName: "calendar")
-//                                    Spacer()
+                                    //                                    Spacer()
                                     
                                     
                                     NavigationLink{
@@ -108,21 +108,21 @@ struct ContentView: View {
                                     
                                 }
                                 Divider().bold().background(Color.accentColor)
-//                                HStack{
-//                                    Text("Today").bold().font(.title)
-//                                    Spacer()
-//
-//                                }
+                                //                                HStack{
+                                //                                    Text("Today").bold().font(.title)
+                                //                                    Spacer()
+                                //
+                                //                                }
                                 List {
                                     ForEach(storedTasks, id: \.self) { item in
                                         Text(item)
                                     }
                                 }
                             }
-//                            .padding(.top,50)
+                            //                            .padding(.top,50)
                             .padding([.leading,.trailing])
                             
-//                            .ignoresSafeArea()
+                            //                            .ignoresSafeArea()
                             
                             Spacer()
                             Spacer()
@@ -150,7 +150,7 @@ struct ContentView: View {
                                             RoundedRectangle(cornerRadius: 25)
                                                 .stroke(Color.accentColor, lineWidth: 2)
                                         )
-
+                                    
                                     
                                 }
                             }
